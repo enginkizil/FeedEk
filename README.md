@@ -12,27 +12,27 @@ You can obtain feeds easily from any domain.
 ## Usage
 1- Include the Javascript resources into you pages <head> section
 
-<head>
+`<head>
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
  <script type="text/javascript" src="FeedEk.js"></script>
-</head>
+</head>`
 
 2- Add a placeholder for the widget to your page
 
-<body>
+`<body>
 ...
  <div id="divRss"></div>
 ...
-</body>
+</body>`
 
 3- Add the Javascript that will populate the placeholder
 
-$('#divRss').FeedEk({
+`$('#divRss').FeedEk({
   FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
   MaxCount : 5,
   ShowDesc : true,
   ShowPubDate:true
-});
+});`
 
 ## Options
 
