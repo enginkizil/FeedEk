@@ -12,10 +12,6 @@ You can obtain feeds easily from any domain.
 ## Usage
 1- Include the Javascript resources into you pages <head> section
 
-`<head>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
- <script type="text/javascript" src="FeedEk.js"></script>
-</head>`
 
 2- Add a placeholder for the widget to your page
 
