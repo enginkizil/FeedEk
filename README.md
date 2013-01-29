@@ -12,31 +12,22 @@ You can obtain feeds easily from any domain.
 ## Usage
 1- Include the Javascript resources into you pages <head> section
 
-<code>
-<head>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
- <script type="text/javascript" src="FeedEk.js"></script>
-</head>
-</code>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+     <script type="text/javascript" src="FeedEk.js"></script>
 
 2- Add a placeholder for the widget to your page
-<code>
-<body>
-...
- <div id="divRss"></div>
-...
-</body>
-</code>
+
+    <div id="divRss"></div>
 
 3- Add the Javascript that will populate the placeholder
-<code>
-$('#divRss').FeedEk({
-  FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
-  MaxCount : 5,
-  ShowDesc : true,
-  ShowPubDate:true
-});
-<code>
+
+      $('#divRss').FeedEk({
+        FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+        MaxCount : 5,
+        ShowDesc : true,
+        ShowPubDate:true
+      });
+    
 
 ## Options
 
@@ -49,6 +40,9 @@ $('#divRss').FeedEk({
 - **ShowPubDate**
   Option to show Feed Item Publish Date. Default is `true`.
 
+## Demo
+
 [Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
 
 [Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
+
