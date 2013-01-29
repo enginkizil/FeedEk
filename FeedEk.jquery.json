@@ -15,7 +15,7 @@
     }
   ],
   "dependencies": {
-    "jquery": "1.6+"
+    "jquery": ">=1.6.2"
   },
   "homepage": "http://jquery-plugins.net/FeedEk/FeedEk.html",
   "demo": "http://jquery-plugins.net/FeedEk/FeedEk_demo.html",
