@@ -10,7 +10,7 @@ You can obtain feeds easily from any domain.
 
 
 ## Usage
-1- Include the Javascript resources into you pages <head> section
+1- Include the Javascript resources into you pages <head>
 
      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
      <script type="text/javascript" src="FeedEk.js"></script>
@@ -32,13 +32,13 @@ You can obtain feeds easily from any domain.
 ## Options
 
 - **FeedUrl**
-  Your Feed Url and it's required.
+  Your Feed Url and it's required
 - **MaxCount**
-  Feed Item Count. Default is `5`.
+  Feed Item Count. Default is `5`
 - **ShowDesc**
-  Option to show Feed Item Description. Default is `true`.
+  Option to show Feed Item Description. Default is `true`
 - **ShowPubDate**
-  Option to show Feed Item Publish Date. Default is `true`.
+  Option to show Feed Item Publish Date. Default is `true`
 
 ## Demo
 
