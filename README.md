@@ -25,7 +25,9 @@ You can obtain feeds easily from any domain.
         FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
         MaxCount : 5,
         ShowDesc : true,
-        ShowPubDate:true
+        ShowPubDate:true,
+		DescCharacterLimit:100,
+        TitleLinkTarget:_blank
       });
     
 
@@ -39,6 +41,10 @@ You can obtain feeds easily from any domain.
   Option to show Feed Item Description. Default is `true`
 - **ShowPubDate**
   Option to show Feed Item Publish Date. Default is `true`
+- **DescCharacterLimit**
+  Feed Description Characters Limit Count. Default is no limit
+- **TitleLinkTarget**
+  Option for Feed Title Link Target. Default is `_blank`
 
 ## Demo
 
