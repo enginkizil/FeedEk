@@ -8,7 +8,7 @@ You can obtain feeds easily from any domain.
 
 [Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
 
-
+ 
 ## Usage
 1- Include the Javascript resources into you pages <head>
 
