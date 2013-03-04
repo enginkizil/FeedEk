@@ -1,5 +1,5 @@
 /*
-* FeedEk jQuery RSS/ATOM Feed Plugin v1.1.0
+* FeedEk jQuery RSS/ATOM Feed Plugin v1.1.2
 * http://jquery-plugins.net/FeedEk/FeedEk.html
 * Author : Engin KIZIL 
 * http://www.enginkizil.com 
