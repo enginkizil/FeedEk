@@ -26,8 +26,8 @@ You can obtain feeds easily from any domain.
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
-		DescCharacterLimit:100,
-        TitleLinkTarget:_blank
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank'
       });
     
 
