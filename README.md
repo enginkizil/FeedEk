@@ -45,6 +45,8 @@ You can obtain feeds easily from any domain.
   Feed Description Characters Limit Count. Default is no limit
 - **TitleLinkTarget**
   Option for Feed Title Link Target. Default is `_blank`
+- **PurgeHtml**
+  Option to remove from the Feed Item Description html. Default is `true`
 
 ## Demo
 
