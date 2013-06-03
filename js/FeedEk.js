@@ -12,6 +12,7 @@
             ShowDesc: true,
             ShowPubDate: true,
             CharacterLimit: 0,
+            PurgeHtml: true,
             TitleLinkTarget: "_blank"
         }, opt);
 
@@ -24,6 +25,8 @@
             success: function (data) {
                 $("#" + id).empty();
                 var s = "";
+                var item_content = "";
+
                 $.each(data.responseData.feed.entries, function (e, item) {
                     s += '<li><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
                     if (def.ShowPubDate) {
@@ -31,11 +34,18 @@
                         s += '<div class="itemDate">' + i.toLocaleDateString() + "</div>";
                     }
                     if (def.ShowDesc) {
-                        if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>";
+                        if (def.PurgeHtml) {
+                            item_content = $(item.content).text();
+                            item_content = String(item_content).replace(/^\s+/g, '');
                         }
                         else {
-                            s += '<div class="itemContent">' + item.content + "</div>";
+                            item_content = item.content;
+                        }
+                        if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
+                            s += '<div class="itemContent">' + item_content.substr(0, def.DescCharacterLimit) + "...</div>";
+                        }
+                        else {
+                            s += '<div class="itemContent">' + item_content + "</div>";
                         }
                     }
                 });
