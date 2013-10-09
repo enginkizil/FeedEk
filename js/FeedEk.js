@@ -12,7 +12,8 @@
             ShowDesc: true,
             ShowPubDate: true,
             CharacterLimit: 0,
-            TitleLinkTarget: "_blank"
+            TitleLinkTarget: "_blank",
+            Success: function(){}
         }, opt);
 
         var id = $(this).attr("id");
@@ -40,6 +41,8 @@
                     }
                 });
                 $("#" + id).append('<ul class="feedEkList">' + s + "</ul>");
+                
+                def.Success();
             }
         });
     };
