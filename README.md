@@ -4,9 +4,7 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 **FeedEk** is an RSS/ATOM Feed Reader/Importer/Parser that is written with jQuery. 
 You can obtain feeds easily from any domain.
 
-[Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
-
-[Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
+[Demo](http://www.suabo.de/opensource/jquery/FeedEk/FeedEk_demo.html)
 
  
 ## Usage
@@ -52,12 +50,13 @@ You can obtain feeds easily from any domain.
 
 ## Demo
 
-[Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
-
-[Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
+[Demo](http://www.suabo.de/opensource/jquery/FeedEk/FeedEk_demo.html)
 
 ## Contributor
- 
+
 Marcel Grolms - http://www.suabo.de 
 - Added EnableFlips & ReadOn functionality
 - Fixed some bugs: CharacterLimit will work now with the CharacterLimit parameter, added </li>
+
+Engin KIZIL - http://www.enginkizil.com
+- FeedEk jQuery RSS/ATOM Feed Plugin v1.1.2 [Plugin Website](http://jquery-plugins.net/FeedEk/FeedEk.html)
