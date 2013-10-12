@@ -16,6 +16,7 @@
             TitleLinkTarget: "_blank",
             ShowReadOn: 0,
             EnableFlips: 0,            
+            Success: function(){}
         }, opt);
 
         var id = $(this).attr("id");
@@ -51,6 +52,7 @@
                   $("#" + id).append('<div class="navigation"></div>');
                   $('#' + id).flips( { autorun_delay: 0, direction: 'left'   } );
                 }
+                def.Success();
             }
         });
     };
