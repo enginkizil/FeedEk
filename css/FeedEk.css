@@ -1,6 +1,19 @@
-.feedEkList{width:450px; list-style:none outside none;background-color:#FFFFFF; border:1px solid #D3CAD7; padding:4px 6px; color:#3E3E3E;}
+.feedEkList{width:300px; list-style:none outside none;background-color:#FFFFFF; border:1px solid #D3CAD7; padding:4px 6px; color:#3E3E3E;}
 .feedEkList li{border-bottom:1px solid #D3CAD7; padding:5px;}
 .feedEkList li:last-child{border-bottom:none;}
 .itemTitle a{font-weight:bold; color:#4EBAFF !important; text-decoration:none }
 .itemTitle a:hover{ text-decoration:underline }
-.itemDate{font-size:11px;color:#AAAAAA;} 
+.itemDate{font-size:11px;color:#AAAAAA;}
+/* only required if EnableFlips: true, see example 4 */ 
+.flips {float: left;height:auto;width:100%;}
+.flips .itemTitle a{font-weight:bold;text-decoration:none;color:#004C99;}
+.flips .feedEkList.content {height:120px;position: relative;overflow: hidden;padding:0;margin:0;}
+.flips .content li.block {width:300px;height:100%;position: absolute;top: 0px;display: none;overflow: hidden;padding:0;border:0;}
+.flips .content .block .in {padding:10px;}
+.flips .content .itemDate {margin:0 0 10px 0;font-size:11px;color:#858585;border-bottom:1px solid #D3CAD7;}
+.flips .navigation {width:40px;height:20px;margin:10px auto 0 auto;}
+.flips .navigation .btn-left, 
+.flips .navigation .btn-right,
+.flips .navigation .btn-left-dis, 
+.flips .navigation .btn-right-dis {width: 20px;height: 20px;background-color: #eee;color: black;float: left;font-size: 16px;text-align: center;cursor: pointer;}
+.flips .navigation .btn-left-dis, .to-flips .navigation .btn-right-dis {background-color: #858585;color: #333;cursor: default;} 

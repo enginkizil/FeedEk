@@ -1,7 +1,8 @@
-/* FeedEk jQuery RSS/ATOM Feed Plugin v1.1.2
+/* FeedEk jQuery RSS/ATOM Feed Plugin v1.1.3
 *  http://jquery-plugins.net/FeedEk/FeedEk.html
 *  Author : Engin KIZIL http://www.enginkizil.com
-*  http://opensource.org/licenses/mit-license.php  
+*  http://opensource.org/licenses/mit-license.php
+*  Contributor: v1.1.3 Marcel Grolms http://www.suabo.de   
 */
 
 (function ($) {
@@ -11,8 +12,10 @@
             MaxCount: 5,
             ShowDesc: true,
             ShowPubDate: true,
-            CharacterLimit: 0,
-            TitleLinkTarget: "_blank"
+            DescCharacterLimit: 0,
+            TitleLinkTarget: "_blank",
+            ShowReadOn: 0,
+            EnableFlips: 0,            
         }, opt);
 
         var id = $(this).attr("id");
@@ -25,21 +28,29 @@
                 $("#" + id).empty();
                 var s = "";
                 $.each(data.responseData.feed.entries, function (e, item) {
-                    s += '<li><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
+                    s += '<li class="block"><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
                     if (def.ShowPubDate) {
                         i = new Date(item.publishedDate);
                         s += '<div class="itemDate">' + i.toLocaleDateString() + "</div>";
-                    }
+                    }                    
                     if (def.ShowDesc) {
+                        
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>";
-                        }
-                        else {
+                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...";
+                            if (def.ShowReadOn) s += '<a class="readon" href="' + item.link + '" target="' + def.TitleLinkTarget + '" >read on</a>';
+                            s += "</div>";                          
+                        } else {
                             s += '<div class="itemContent">' + item.content + "</div>";
                         }
-                    }
+                    }                    
+                    s += '</li>';
                 });
-                $("#" + id).append('<ul class="feedEkList">' + s + "</ul>");
+                $("#" + id).append('<ul class="feedEkList content">' + s + "</ul>");
+                if(def.EnableFlips) {
+                  $('#' + id).addClass('flips');  
+                  $("#" + id).append('<div class="navigation"></div>');
+                  $('#' + id).flips( { autorun_delay: 0, direction: 'left'   } );
+                }
             }
         });
     };

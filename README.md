@@ -42,9 +42,13 @@ You can obtain feeds easily from any domain.
 - **ShowPubDate**
   Option to show Feed Item Publish Date. Default is `true`
 - **DescCharacterLimit**
-  Feed Description Characters Limit Count. Default is no limit
+  Feed Description Characters Limit Count. Default is no limit 
 - **TitleLinkTarget**
   Option for Feed Title Link Target. Default is `_blank`
+- **ShowReadOn**
+  Show a read on Link if CharacterLimit cut off the description. Default is `false`
+- **EnableFlips**
+  Enable the JQuery Flips Plugin integration. Default is `false`
 
 ## Demo
 
@@ -52,3 +56,8 @@ You can obtain feeds easily from any domain.
 
 [Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
 
+## Contributor
+ 
+Marcel Grolms - http://www.suabo.de 
+- Added EnableFlips & ReadOn functionality
+- Fixed some bugs: CharacterLimit will work now with the CharacterLimit parameter, added </li>
