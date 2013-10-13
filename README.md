@@ -47,6 +47,8 @@ You can obtain feeds easily from any domain.
   Show a read on Link if CharacterLimit cut off the description. Default is `false`
 - **EnableFlips**
   Enable the JQuery Flips Plugin integration. Default is `false`
+- **PurgeHtml**
+  Option to remove from the Feed Item Description html. Default is `true`
 
 ## Demo
 

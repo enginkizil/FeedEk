@@ -11,12 +11,14 @@
             FeedUrl: "http://rss.cnn.com/rss/edition.rss",
             MaxCount: 5,
             ShowDesc: true,
+            PurgeHtml: true,
             ShowPubDate: true,
             DescCharacterLimit: 0,
             TitleLinkTarget: "_blank",
             ShowReadOn: 0,
-            EnableFlips: 0,            
+            EnableFlips: 0,
             Success: function(){}
+
         }, opt);
 
         var id = $(this).attr("id");
@@ -28,6 +30,8 @@
             success: function (data) {
                 $("#" + id).empty();
                 var s = "";
+                var item_content = "";
+
                 $.each(data.responseData.feed.entries, function (e, item) {
                     s += '<li class="block"><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
                     if (def.ShowPubDate) {
@@ -35,13 +39,20 @@
                         s += '<div class="itemDate">' + i.toLocaleDateString() + "</div>";
                     }                    
                     if (def.ShowDesc) {
-                        
+                        if (def.PurgeHtml) {
+                            item_content = $(item.content).text();
+                            item_content = String(item_content).replace(/^\s+/g, '');
+                        }
+                        else {
+                            item_content = item.content;
+                        }
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...";
+                            s += '<div class="itemContent">' + item_content.substr(0, def.DescCharacterLimit) + "...";
                             if (def.ShowReadOn) s += '<a class="readon" href="' + item.link + '" target="' + def.TitleLinkTarget + '" >read on</a>';
-                            s += "</div>";                          
-                        } else {
-                            s += '<div class="itemContent">' + item.content + "</div>";
+                            s += "</div>";                            
+                        }
+                        else {
+                            s += '<div class="itemContent">' + item_content + "</div>";
                         }
                     }                    
                     s += '</li>';
