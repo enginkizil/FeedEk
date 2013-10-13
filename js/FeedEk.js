@@ -30,7 +30,6 @@
             success: function (data) {
                 $("#" + id).empty();
                 var s = "";
-                var item_content = "";
 
                 $.each(data.responseData.feed.entries, function (e, item) {
                     s += '<li class="block"><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
@@ -39,20 +38,16 @@
                         s += '<div class="itemDate">' + i.toLocaleDateString() + "</div>";
                     }                    
                     if (def.ShowDesc) {
-                        if (def.PurgeHtml) {
-                            item_content = $(item.content).text();
-                            item_content = String(item_content).replace(/^\s+/g, '');
-                        }
-                        else {
-                            item_content = item.content;
+                        if (def.PurgeHtml) {                            
+                            item.content = item.content.replace(/^\s+/g, '');
                         }
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item_content.substr(0, def.DescCharacterLimit) + "...";
+                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...";
                             if (def.ShowReadOn) s += '<a class="readon" href="' + item.link + '" target="' + def.TitleLinkTarget + '" >read on</a>';
                             s += "</div>";                            
                         }
                         else {
-                            s += '<div class="itemContent">' + item_content + "</div>";
+                            s += '<div class="itemContent">' + item.content + "</div>";
                         }
                     }                    
                     s += '</li>';
