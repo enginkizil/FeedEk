@@ -71,5 +71,11 @@ Marcel Grolms - http://www.suabo.de
 - Added EnableFlips & ReadOn functionality
 - Fixed some bugs: CharacterLimit will work now with the CharacterLimit parameter, added </li>
 
+davidemoro
+- Added PurgeHTML parameter
+
+lexinerus
+- Added a function for success event
+
 Engin KIZIL - http://www.enginkizil.com
 - FeedEk jQuery RSS/ATOM Feed Plugin v1.1.2 [Plugin Website](http://jquery-plugins.net/FeedEk/FeedEk.html)
