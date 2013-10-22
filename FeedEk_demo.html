@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,6 +7,7 @@
 <link href="css/FeedEk.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/FeedEk.js"></script>
+<script type="text/javascript" src="js/jquery.flips.min.js"></script>
  
 <script type="text/javascript" >
     $(document).ready(function () {  
@@ -28,31 +29,43 @@
             MaxCount: 5,
 	    ShowDesc: false
         });
-    });    
+        
+  $('#divRss4').FeedEk({
+    FeedUrl: 'http://rss.cnn.com/rss/edition.rss',
+    MaxCount: 5,
+    ShowDesc: true,
+    DescCharacterLimit: 100,
+    ShowReadOn: 1,
+    EnableFlips: 1
+  });        
+});    
 
 </script>
 <style>
 body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; background-color:#efefef;font-size: 13px;line-height: 17px !important;}
 .rssDiv{float:left; padding-right:35px;}
-ul{width:300px !important}
 </style>
 
 </head>
 <body>
 <div>
-<div class="rssDiv">
-<p>Example<p/>
-<div id="divRss"></div>
-</div>
-<div class="rssDiv">
-<p>Example 2<p/>
-<div id="divRss2"></div>
-</div>
-<div class="rssDiv">
-<p>Example 3<p/>
-<div id="divRss3"></div>
-</div>
-<div style="clear:both"></div>
+  <div class="rssDiv">
+    <p>Example</p>
+    <div id="divRss"></div>
+  </div>
+  <div class="rssDiv">
+    <p>Example 2</p>
+    <div id="divRss2"></div>
+  </div>
+  <div class="rssDiv">
+    <p>Example 3</p>
+    <div id="divRss3"></div>
+  </div>
+  <div class="rssDiv">
+    <p>Example 4</p>
+    <div id="divRss4"></div>
+  </div>
+  <div style="clear:both"></div>
 </div>
 
 </body>
