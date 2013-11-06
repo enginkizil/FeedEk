@@ -12,6 +12,7 @@
             ShowDesc: true,
             ShowPubDate: true,
             CharacterLimit: 0,
+            titleCharacterLimit : 0,
             TitleLinkTarget: "_blank"
         }, opt);
 
@@ -25,6 +26,9 @@
                 $("#" + id).empty();
                 var s = "";
                 $.each(data.responseData.feed.entries, function (e, item) {
+                    if(def.titleCharacterLimit > 0 && item.title.length > def.titleCharacterLimit) {
+                        item.title = item.title.substr(0, def.titleCharacterLimit) + '...'
+                    }
                     s += '<li><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
                     if (def.ShowPubDate) {
                         i = new Date(item.publishedDate);
