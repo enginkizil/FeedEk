@@ -31,11 +31,11 @@
                         s += '<div class="itemDate">' + i.toLocaleDateString() + "</div>";
                     }
                     if (def.ShowDesc) {
-                        if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>";
+                        if (def.DescCharacterLimit > 0 && item.contentSnippet.length > def.DescCharacterLimit) {
+                            s += '<div class="itemContent">' + item.contentSnippet.substr(0, def.DescCharacterLimit) + "...</div>";
                         }
                         else {
-                            s += '<div class="itemContent">' + item.content + "</div>";
+                            s += '<div class="itemContent">' + item.contentSnippet + "</div>";
                         }
                     }
                 });
