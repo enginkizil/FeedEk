@@ -1,8 +1,9 @@
 FeedEk jQuery RSS/ATOM Feed Plugin
 ======
 
-**FeedEk** is a jQuery plugin for parsing and displaying RSS and Atom feeds. 
-You can obtain feeds easily from any domain.
+**FeedEk** is a jQuery plugin for parsing and displaying RSS and Atom feeds. FeedEk uses **Google Feed API** to retrieve feeds. 
+
+You can obtain feeds easily from any domain. No need for server-side scripts.
 
 [Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
 
@@ -52,9 +53,11 @@ You can obtain feeds easily from any domain.
       });
 
 **IMPORTANT :** [Moment.js](http://momentjs.com) is used for DateFormat options. You must include [Moment.js](http://momentjs.com/downloads/moment.min.js) for date format.
-	- If you want to localize date format (day name, month name) you must include [Moment.js with langs](http://momentjs.com/downloads/moment-with-langs.min.js) instead.
-	- Please visit [format examples](http://momentjs.com/docs/#/displaying/format/) and [languages](http://momentjs.com). for more information.
-	- Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.html) page for date format usage.
+If you want to localize date format (day name, month name) you must include [Moment.js with langs](http://momentjs.com/downloads/moment-with-langs.min.js) instead.
+
+Please visit [format examples](http://momentjs.com/docs/#/displaying/format/) and [languages](http://momentjs.com). for more information.
+
+Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.html) page for date format usage.
 
 
 ## Options
