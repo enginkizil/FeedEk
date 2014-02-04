@@ -42,6 +42,7 @@
                         }                        
                     }
                     if (def.ShowDesc) {
+                        item.content = item.content.replace(/<(script|img|embed|object|applet|iframe)[^>]*>/gi, '');
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
                             s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>";
                         }
