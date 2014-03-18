@@ -59,6 +59,31 @@ Please visit [format examples](http://momentjs.com/docs/#/displaying/format/) an
 
 Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.html) page for date format usage.
 
+**- With your own Success/Fail/Progress event handlers**
+
+```
+$('#divRss').FeedEk({
+    FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+  }).then(function(){ /*success*/ }, function(){ /*fail*/ }, function(){ /*progress*/ });
+```
+
+```
+var feed1 = $('#divRss').FeedEk({
+    FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+  });
+
+feed1.done(function(){ /*success*/ });
+```
+
+```
+var feed1 = $('#divRss').FeedEk({
+    FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+  });
+
+feed1.always(function(){ /*do this on success or fail*/ });
+```
+
+See the [jQuery Promise](http://api.jquery.com/deferred.promise/) documentation for more options
 
 ## Options
 
