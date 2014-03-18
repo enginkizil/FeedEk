@@ -20,10 +20,28 @@
         var id = $(this).attr("id"), i, s = "",dt;
         $("#" + id).empty().append('<img src="loader.gif" />');
 
-        $.ajax({
+        return $.ajax({
             url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
             dataType: "json",
             success: function (data) {
+                var timestamp = new Date();
+                timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
+                console.log(timestamp + " " + def.FeedUrl + " .success()");
+
+                timestamp = new Date();
+                timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
+                var sleepingInfo = timestamp + " " + def.FeedUrl + " sleeping";
+
+                for (var i = 0; i < 10000000;) {
+                    sleepingInfo += ".";
+                    i++;
+                }
+                console.log(sleepingInfo);
+
+                timestamp = new Date();
+                timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
+                console.log(timestamp + " " + def.FeedUrl + " awake");
+
                 $("#" + id).empty();
                 $.each(data.responseData.feed.entries, function (e, item) {
                     s += '<li><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
@@ -51,7 +69,11 @@
                     }
                 });
                 $("#" + id).append('<ul class="feedEkList">' + s + "</ul>");
+
+                timestamp = new Date();
+                timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
+                console.log(timestamp + " " + def.FeedUrl + " .success() complete");
             }
-        });
+        }).promise();
     };
 })(jQuery);
