@@ -6,6 +6,9 @@
 
 (function ($) {
     $.fn.FeedEk = function (opt) {
+        var timestamp = new Date();
+        timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
+
         var def = $.extend({
             FeedUrl: "http://rss.cnn.com/rss/edition.rss",
             MaxCount: 5,
@@ -14,11 +17,14 @@
             CharacterLimit: 0,
             TitleLinkTarget: "_blank",
             DateFormat: "",
-            DateFormatLang:"en"
+            DateFormatLang: "en",
+            ImageRoot: ""
         }, opt);
 
-        var id = $(this).attr("id"), i, s = "",dt;
-        $("#" + id).empty().append('<img src="loader.gif" />');
+        console.log(timestamp + " " + def.FeedUrl);
+
+        var id = $(this).attr("id"), i, s = "", dt;
+        $("#" + id).empty().append('<img src="' + def.ImageRoot + 'loader.gif" />');
 
         return $.ajax({
             url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
@@ -26,21 +32,7 @@
             success: function (data) {
                 var timestamp = new Date();
                 timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
-                console.log(timestamp + " " + def.FeedUrl + " .success()");
-
-                timestamp = new Date();
-                timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
-                var sleepingInfo = timestamp + " " + def.FeedUrl + " sleeping";
-
-                for (var i = 0; i < 10000000;) {
-                    sleepingInfo += ".";
-                    i++;
-                }
-                console.log(sleepingInfo);
-
-                timestamp = new Date();
-                timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
-                console.log(timestamp + " " + def.FeedUrl + " awake");
+                console.log(timestamp + " " + def.FeedUrl + " FeedEk.success()");
 
                 $("#" + id).empty();
                 $.each(data.responseData.feed.entries, function (e, item) {
@@ -72,7 +64,7 @@
 
                 timestamp = new Date();
                 timestamp = timestamp.getSeconds() + "." + timestamp.getMilliseconds();
-                console.log(timestamp + " " + def.FeedUrl + " .success() complete");
+                console.log(timestamp + " " + def.FeedUrl + " FeedEk.success() complete");
             }
         }).promise();
     };
