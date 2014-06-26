@@ -13,6 +13,7 @@
             ShowPubDate: true,
             CharacterLimit: 0,
             TitleLinkTarget: "_blank",
+            Success:function(){},
             DateFormat: "",
             DateFormatLang:"en"
         }, opt);
@@ -51,6 +52,7 @@
                     }
                 });
                 $("#" + id).append('<ul class="feedEkList">' + s + "</ul>");
+                def.success($('#' + id));
             }
         });
     };
