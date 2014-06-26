@@ -76,7 +76,7 @@ Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.htm
   Feed Description Characters Limit Count. Default is no limit
 - **TitleLinkTarget**
   Option for Feed Title Link Target. Default is `_blank`
--**Success**
+- **Success**
   Callback to manipulate the DOM element wich contains the feed after the load
 - **DateFormat**
   Option for Feed Publish Date Format. Default is none
