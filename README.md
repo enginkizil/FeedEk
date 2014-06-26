@@ -36,7 +36,8 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
         ShowDesc : true,
         ShowPubDate:true,
         DescCharacterLimit:100,
-        TitleLinkTarget:'_blank'
+        TitleLinkTarget:'_blank',
+        Success:function(feed){},
       });
 
 **- With Date Format Options**
@@ -48,6 +49,7 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
         ShowPubDate:true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank',
+        Success:function(feed){},
 		DateFormat:'MM/DD/YYYY',
 		DateFormatLang:'en'
       });
@@ -74,6 +76,8 @@ Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.htm
   Feed Description Characters Limit Count. Default is no limit
 - **TitleLinkTarget**
   Option for Feed Title Link Target. Default is `_blank`
+- **Success**
+  Callback to manipulate the DOM element wich contains the feed after the load
 - **DateFormat**
   Option for Feed Publish Date Format. Default is none
 - **DateFormatLang**
