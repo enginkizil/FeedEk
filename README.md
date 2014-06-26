@@ -49,6 +49,7 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
         ShowPubDate:true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank',
+        Success:function(feed){},
 		DateFormat:'MM/DD/YYYY',
 		DateFormatLang:'en'
       });
