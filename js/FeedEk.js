@@ -43,7 +43,17 @@
                     }
                     if (def.ShowDesc) {
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>";
+                            
+                            var yourString = item.content; //replace with your string.
+                            var maxLength = def.DescCharacterLimit // maximum number of characters to extract
+
+                            //trim the string to the maximum length
+                            var trimmedString = yourString.substr(0, maxLength);
+
+                            //re-trim if we are in the middle of a word
+                            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+
+                            s += '<div class="itemContent">' + trimmedString + "...</div>";
                         }
                         else {
                             s += '<div class="itemContent">' + item.content + "</div>";
