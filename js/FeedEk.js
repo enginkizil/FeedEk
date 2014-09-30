@@ -26,7 +26,7 @@
             success: function (data) {
                 $("#" + id).empty();
                 $.each(data.responseData.feed.entries, function (e, item) {
-                    s += '<li><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
+                    s += '<li><div class="itemTitle"><a href="' + item.link + '" title="' + item.title + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
                     
                     if (def.ShowPubDate){
                         dt= new Date(item.publishedDate);
@@ -51,6 +51,10 @@
                     }
                 });
                 $("#" + id).append('<ul class="feedEkList">' + s + "</ul>");
+		
+		if (def.Callback) {
+		    def.Callback(def.Callback_args);
+		}
             }
         });
     };
