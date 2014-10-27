@@ -10,6 +10,9 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
 [Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
 
  
+## This fork
+This fork under the UMNLibraries organization was created to enable customization of the HTML output of FeedEk to fit our desired output for the UMN Libraries home page.
+
 ## Usage
 1- Include jQuery and FeedEk plugin scripts into your page.
 
