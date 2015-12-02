@@ -5,6 +5,8 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 
 You can obtain feeds easily from any domain. No need for server-side scripts.
 
+**NOTE:** Please visit plugin homepage for FeedEk v3.0 using **YQL API**.
+
 [Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
 
 [Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
