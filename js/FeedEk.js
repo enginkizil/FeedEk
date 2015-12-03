@@ -1,5 +1,5 @@
 /*
-* FeedEk jQuery RSS/ATOM Feed Plugin v2.0
+* FeedEk jQuery RSS/ATOM Feed Plugin v3.0 with YQL API
 * http://jquery-plugins.net/FeedEk/FeedEk.html  https://github.com/enginkizil/FeedEk
 * Author : Engin KIZIL http://www.enginkizil.com   
 */
@@ -7,11 +7,11 @@
 (function ($) {
     $.fn.FeedEk = function (opt) {
         var def = $.extend({
-            FeedUrl: "http://rss.cnn.com/rss/edition.rss",
+            FeedUrl: "http://jquery-plugins.net/rss",
             MaxCount: 5,
             ShowDesc: true,
             ShowPubDate: true,
-            CharacterLimit: 0,
+            DescCharacterLimit: 0,
             TitleLinkTarget: "_blank",
             DateFormat: "",
             DateFormatLang:"en"
@@ -20,37 +20,43 @@
         var id = $(this).attr("id"), i, s = "",dt;
         $("#" + id).empty().append('<img src="loader.gif" />');
 
+        var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + def.FeedUrl + '" LIMIT ' + def.MaxCount;
+
         $.ajax({
-            url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
+            url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=true&callback=?",
             dataType: "json",
             success: function (data) {
                 $("#" + id).empty();
-                $.each(data.responseData.feed.entries, function (e, item) {
-                    s += '<li><div class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></div>";
+                $.each(data.query.results.rss, function (e, itm) {
+                    s += '<li><div class="itemTitle"><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
                     
                     if (def.ShowPubDate){
-                        dt= new Date(item.publishedDate);
+                        dt = new Date(itm.channel.item.pubDate);
+                        s += '<div class="itemDate">';
                         if ($.trim(def.DateFormat).length > 0) {
                             try {
                                 moment.lang(def.DateFormatLang);
-                                s += '<div class="itemDate">' + moment(dt).format(def.DateFormat) + "</div>";
+                                s += moment(dt).format(def.DateFormat);
                             }
-                            catch (e){s += '<div class="itemDate">' + dt.toLocaleDateString() + "</div>";}                            
+                            catch (e){s += dt.toLocaleDateString();}                            
                         }
                         else {
-                            s += '<div class="itemDate">' + dt.toLocaleDateString() + "</div>";
-                        }                        
+                            s += dt.toLocaleDateString();
+                        }
+                        s += '</div>';
                     }
                     if (def.ShowDesc) {
-                        if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-                            s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>";
+                        s += '<div class="itemContent">';
+                         if (def.DescCharacterLimit > 0 && itm.channel.item.description.length > def.DescCharacterLimit) {
+                            s += itm.channel.item.description.substring(0, def.DescCharacterLimit) + '...';
                         }
                         else {
-                            s += '<div class="itemContent">' + item.content + "</div>";
-                        }
+                            s += itm.channel.item.description;
+                         }
+                         s += '</div>';
                     }
                 });
-                $("#" + id).append('<ul class="feedEkList">' + s + "</ul>");
+                $("#" + id).append('<ul class="feedEkList">' + s + '</ul>');
             }
         });
     };
