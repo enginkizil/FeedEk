@@ -1,7 +1,7 @@
 /*
 * FeedEk jQuery RSS/ATOM Feed Plugin v2.0
 * http://jquery-plugins.net/FeedEk/FeedEk.html  https://github.com/enginkizil/FeedEk
-* Author : Engin KIZIL http://www.enginkizil.com   
+* Author : Engin KIZIL http://www.enginkizil.com
 * Modifications by gormsby@umn.edui to address the following needs:
 * - Requesting feeds over https to avoid mixed content warnings/blocks.
 * - Breaking summary on word boundary after
@@ -12,7 +12,7 @@
 (function ($) {
     $.fn.FeedEk = function (opt) {
         var def = $.extend({
-            FeedUrl: "http://rss.cnn.com/rss/edition.rss",
+            FeedUrl: 'http://www.continuum.umn.edu/feed/json',
             MaxCount: 5,
             ShowDesc: true,
             ShowPubDate: true,
@@ -26,13 +26,14 @@
         $("#" + id).empty().append('<i class="icon-spin"></i>');
 
         $.ajax({
-            url: "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
-            dataType: "json",
+            url: def.FeedUrl,
+            jsonp: 'callback',
+            dataType: 'jsonp',
             success: function (data) {
                 $("#" + id).empty();
                 $.each(data.responseData.feed.entries, function (e, item) {
                     s += '<p><strong><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></strong><br />";
-                    
+
                     if (def.ShowPubDate){
                         dt= new Date(item.publishedDate);
                         if ($.trim(def.DateFormat).length > 0) {
@@ -40,11 +41,11 @@
                                 moment.lang(def.DateFormatLang);
                                 s += '<div class="itemDate">' + moment(dt).format(def.DateFormat) + "</div>";
                             }
-                            catch (e){s += '<div class="itemDate">' + dt.toLocaleDateString() + "</div>";}                            
+                            catch (e){s += '<div class="itemDate">' + dt.toLocaleDateString() + "</div>";}
                         }
                         else {
                             s += '<div class="itemDate">' + dt.toLocaleDateString() + "</div>";
-                        }                        
+                        }
                     }
                     if (def.ShowDesc) {
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
