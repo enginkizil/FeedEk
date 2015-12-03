@@ -7,7 +7,6 @@
 (function ($) {
     $.fn.FeedEk = function (opt) {
         var def = $.extend({
-            FeedUrl: "http://jquery-plugins.net/rss",
             MaxCount: 5,
             ShowDesc: true,
             ShowPubDate: true,
@@ -16,20 +15,22 @@
             DateFormat: "",
             DateFormatLang:"en"
         }, opt);
-
-        var id = $(this).attr("id"), i, s = "",dt;
-        $("#" + id).empty().append('<img src="loader.gif" />');
+        
+        var id = $(this).attr("id"), i, s = "", dt;
+        $("#" + id).empty();
+        if (def.FeedUrl == undefined) return;       
+        $("#" + id).append('<img src="loader.gif" />');
 
         var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + def.FeedUrl + '" LIMIT ' + def.MaxCount;
 
         $.ajax({
-            url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=true&callback=?",
+            url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=false&callback=?",
             dataType: "json",
             success: function (data) {
                 $("#" + id).empty();
                 if (!(data.query.results.rss instanceof Array)) {
-					data.query.results.rss = [data.query.results.rss];
-				}
+                    data.query.results.rss = [data.query.results.rss];
+                }
                 $.each(data.query.results.rss, function (e, itm) {
                     s += '<li><div class="itemTitle"><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
                     
