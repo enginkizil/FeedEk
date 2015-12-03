@@ -1,11 +1,10 @@
 FeedEk jQuery RSS/ATOM Feed Plugin
 ======
 
-**FeedEk** is a jQuery plugin for parsing and displaying RSS and Atom feeds. FeedEk uses **Google Feed API** to retrieve feeds. 
+**FeedEk** is a jQuery plugin for parsing and displaying RSS and Atom feeds. FeedEk uses **YQL API** to retrieve feeds. 
 
 You can obtain feeds easily from any domain. No need for server-side scripts.
 
-**NOTE:** Please visit plugin homepage for FeedEk v3.0 using **YQL API**.
 
 [Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
 
@@ -15,7 +14,7 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
 ## Usage
 1- Include jQuery and FeedEk plugin scripts into your page.
 
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
      <script type="text/javascript" src="FeedEk.js"></script>
 
 2- Add a placeholder for the plugin to your page.
@@ -27,13 +26,13 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
 **- Basic**
 
     $('#divRss').FeedEk({
-        FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+        FeedUrl : 'http://jquery-plugins.net/rss',
       });
 
 **- With Options**
 
     $('#divRss').FeedEk({
-        FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+        FeedUrl : 'http://jquery-plugins.net/rss',
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
@@ -44,7 +43,7 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
 **- With Date Format Options**
 
     ('#divRss').FeedEk({
-        FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+        FeedUrl : 'http://jquery-plugins.net/rss',
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
