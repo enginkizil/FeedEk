@@ -10,10 +10,10 @@
 */
 
 (function ($) {
-  $.fn.ContinuumFeed = function (opt) {
+  $.fn.FeedEk = function (opt) {
 
     var def = $.extend({
-      FeedUrl: "https://wwwdev.lib.umn.edu/continuumfeed",
+      FeedUrl: "https://www.lib.umn.edu/continuumfeed",
       MaxCount: 5,
       ShowDesc: true,
       ShowPubDate: true,
@@ -73,7 +73,7 @@
       }
 
       html += '</p>';
-      
+
       return html;
     }
 
@@ -81,9 +81,11 @@
       // Continuum data feed
       url: def.FeedUrl,
       // The name of the callback parameter
-      jsonp: "foo",
+      jsonpCallback: "foo",
       // Tell jQuery we're expecting JSONP
       dataType: "jsonp",
+      // Cache it
+      cache: true,
 
       // Work with the response
       success: function(data) {
