@@ -52,7 +52,7 @@
                         s += '<div class="itemDate">';
                         if ($.trim(def.DateFormat).length > 0) {
                             try {
-                                moment.lang(def.DateFormatLang);
+                                moment.locale(def.DateFormatLang);
                                 s += moment(dt).format(def.DateFormat);
                             }
                             catch (e){s += dt.toLocaleDateString();}                            
