@@ -13,7 +13,9 @@
             DescCharacterLimit: 0,
             TitleLinkTarget: "_blank",
             DateFormat: "",
-            DateFormatLang:"en"
+            DateFormatLang:"en",
+            ResultSortBy: "",
+            ResultDescend: false
         }, opt);
         
         var id = $(this).attr("id"), i, s = "", dt;
@@ -21,7 +23,18 @@
         if (def.FeedUrl == undefined) return;       
         $("#" + id).append('<img src="loader.gif" />');
 
-        var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + def.FeedUrl + '" LIMIT ' + def.MaxCount;
+        var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + def.FeedUrl + '"';
+        
+        if (def.ResultSortBy == "title") {
+			YQLstr = YQLstr + ' | sort(field="channel.item.title", descending="'+def.ResultDescend.toString()+'")';
+		}
+		else if (def.ResultSortBy == "pubdate") {
+			YQLstr = YQLstr + ' | sort(field="channel.item.pubDate", descending="'+def.ResultDescend.toString()+'")';
+		}
+		
+		YQLstr = YQLstr + ' | truncate(count=' + def.MaxCount + ')';
+		
+		console.log(YQLstr);
 
         $.ajax({
             url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=false&callback=?",
