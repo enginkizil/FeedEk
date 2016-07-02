@@ -36,6 +36,7 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
+        ShowAuthor: true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank'
       });
@@ -47,6 +48,7 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
+        ShowAuthor: true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank',
 		DateFormat:'MM/DD/YYYY',
@@ -71,6 +73,8 @@ Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.htm
   Option to show Feed Item Description. Default is `true`
 - **ShowPubDate**
   Option to show Feed Item Publish Date. Default is `true`
+- **ShowAuthor**
+  Option to show Feed Item Author name. Default is `true`
 - **DescCharacterLimit**
   Feed Description Characters Limit Count. Default is no limit
 - **TitleLinkTarget**
