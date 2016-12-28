@@ -32,7 +32,14 @@
                     data.query.results.rss = [data.query.results.rss];
                 }
                 $.each(data.query.results.rss, function (e, itm) {
-                    s += '<li><div class="itemTitle"><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
+                    var link = "";
+					if (itm.channel.item.link.constructor === Array) {
+						link = itm.channel.item.link[0];
+					}
+					else {
+						link = itm.channel.item.link;
+					}
+                    s += '<li><div class="itemTitle"><a href="' + link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
                     
                     if (def.ShowPubDate){
                         dt = new Date(itm.channel.item.pubDate);
