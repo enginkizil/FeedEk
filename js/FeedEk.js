@@ -93,7 +93,13 @@
                 data.query.results.feed = [data.query.results.feed];
             }
             $.each(data.query.results.feed, function (e, itm) {
-                s += '<li><div class="itemTitle"><a href="' + itm.entry.link.href + '" target="' + def.TitleLinkTarget + '" >' + itm.entry.title + '</a></div>';
+                if (itm.entry.title.hasOwnProperty('type') ){
+                  var title = itm.entry.title.content;
+                }
+                else{
+                  var title = itm.entry.title;
+                }
+                s += '<li><div class="itemTitle"><a href="' + itm.entry.link.href + '" target="' + def.TitleLinkTarget + '" >' + title + '</a></div>';
                 if (def.ShowPubDate){
                     dt = new Date(itm.entry.pubDate);
                     s += '<div class="itemDate">';
