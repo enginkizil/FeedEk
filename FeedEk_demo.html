@@ -10,12 +10,12 @@
     <script type="text/javascript" src="js/FeedEk.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#divRss').FeedEk({
+            $('#divRss').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 3
             });
 
-            $('#divRss2').FeedEk({
+            $('#divRss2').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 4,
                 ShowDesc: true,
@@ -23,85 +23,85 @@
                 DescCharacterLimit: 100
             });
 
-            $('#divRss3').FeedEk({
+            $('#divRss3').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 5,
                 ShowDesc: false
             });
 
-            $('#divRss4').FeedEk({
+            $('#divRss4').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'L',
                 DateFormatLang: 'en'
             });
 
-            $('#divRss5').FeedEk({
+            $('#divRss5').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'L',
                 DateFormatLang: 'tr'
             });
 
-            $('#divRss6').FeedEk({
+            $('#divRss6').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'L',
                 DateFormatLang: 'en-gb'
             });
 
-            $('#divRss7').FeedEk({
+            $('#divRss7').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'LL',
                 DateFormatLang: 'en'
             });
 
-            $('#divRss8').FeedEk({
+            $('#divRss8').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'LLL',
                 DateFormatLang: 'en'
             });
 
-            $('#divRss9').FeedEk({
+            $('#divRss9').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'll',
                 DateFormatLang: 'en'
             });
-            $('#divRss10').FeedEk({
+            $('#divRss10').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'lll',
                 DateFormatLang: 'en'
             });
 
-            $('#divRss11').FeedEk({
+            $('#divRss11').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'DD MMMM YYYY',
                 DateFormatLang: 'en'
             });
-            $('#divRss12').FeedEk({
+            $('#divRss12').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'MM/DD/YYYY'
             });
 
-            $('#divRss13').FeedEk({
+            $('#divRss13').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'MM/DD/YYYY HH:mm'
             });
 
-            $('#divRss14').FeedEk({
+            $('#divRss14').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'MM-DD-YYYY'
             });
 
-            $('#divRss15').FeedEk({
+            $('#divRss15').FeedEkRss({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 2,
                 DateFormat: 'MM-DD-YYYY HH:mm'
@@ -117,7 +117,7 @@
 </head>
 <body>
   <div style="padding:10px;">
-    <h1>FeedEk Examples</h1>
+    <h1>FeedEkRss Examples</h1>
     <div>
         <div class="rssDiv">
             <p>
@@ -126,7 +126,7 @@
             <div id="divRss"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2
 });
@@ -140,7 +140,7 @@ $('#divRss').FeedEk({
             <div id="divRss2"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 3,
   ShowDesc: true,
@@ -157,7 +157,7 @@ $('#divRss').FeedEk({
             <div id="divRss3"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 4,
   ShowDesc: false
@@ -176,7 +176,7 @@ $('#divRss').FeedEk({
             <div id="divRss4"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'L',
@@ -189,7 +189,7 @@ $('#divRss').FeedEk({
             <div id="divRss5"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'L',
@@ -202,7 +202,7 @@ $('#divRss').FeedEk({
             <div id="divRss6"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'L',
@@ -219,7 +219,7 @@ $('#divRss').FeedEk({
             <div id="divRss7"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'LL',
@@ -232,7 +232,7 @@ $('#divRss').FeedEk({
             <div id="divRss8"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'LLL',
@@ -245,7 +245,7 @@ $('#divRss').FeedEk({
             <div id="divRss9"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'll',
@@ -262,7 +262,7 @@ $('#divRss').FeedEk({
             <div id="divRss10"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'lll',
@@ -275,7 +275,7 @@ $('#divRss').FeedEk({
             <div id="divRss11"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'DD MMMM YYYY',
@@ -288,7 +288,7 @@ $('#divRss').FeedEk({
             <div id="divRss12"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'MM/DD/YYYY'
@@ -304,7 +304,7 @@ $('#divRss').FeedEk({
             <div id="divRss13"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'MM/DD/YYYY HH:mm'
@@ -316,7 +316,7 @@ $('#divRss').FeedEk({
             <div id="divRss14"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'MM-DD-YYYY'
@@ -328,7 +328,7 @@ $('#divRss').FeedEk({
             <div id="divRss15"></div>
             <strong>Code</strong>
             <pre class="prettyprint">
-$('#divRss').FeedEk({
+$('#divRss').FeedEkRss({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2,
   DateFormat: 'MM-DD-YYYY HH:mm'
