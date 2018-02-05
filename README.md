@@ -6,9 +6,9 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 You can obtain feeds easily from any domain. No need for server-side scripts.
 
 
-[Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
+[Plugin Homepage](https://jquery-plugins.net/FeedEk/FeedEk.html)
 
-[Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
+[Demo](https://jquery-plugins.net/FeedEk/FeedEk_demo.html)
 
  
 ## Usage
@@ -58,7 +58,7 @@ If you want to localize date format (day name, month name) you must include [Mom
 
 Please visit [format examples](http://momentjs.com/docs/#/displaying/format/) and [languages](http://momentjs.com). for more information.
 
-Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.html) page for date format usage.
+Check out [FeedEk examples](https://jquery-plugins.net/FeedEk/FeedEk-examples.html) page for date format usage.
 
 
 ## Options
@@ -82,7 +82,7 @@ Check out [FeedEk examples](http://jquery-plugins.net/FeedEk/FeedEk-examples.htm
 
 ## Demo
 
-[Plugin Homepage](http://jquery-plugins.net/FeedEk/FeedEk.html)
+[Plugin Homepage](https://jquery-plugins.net/FeedEk/FeedEk.html)
 
-[Demo](http://jquery-plugins.net/FeedEk/FeedEk_demo.html)
+[Demo](https://jquery-plugins.net/FeedEk/FeedEk_demo.html)
 
