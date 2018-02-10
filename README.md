@@ -37,7 +37,9 @@ You can obtain feeds easily from any domain. No need for server-side scripts.
         ShowDesc : true,
         ShowPubDate:true,
         DescCharacterLimit:100,
-        TitleLinkTarget:'_blank'
+        TitleLinkTarget:'_blank',
+        ResultSortBy:'title',
+        ResultDescend:true,
       });
 
 **- With Date Format Options**
@@ -79,6 +81,10 @@ Check out [FeedEk examples](https://jquery-plugins.net/FeedEk/FeedEk-examples.ht
   Option for Feed Publish Date Format. Default is none
 - **DateFormatLang**
   Option for Feed Publish Date Format Language for localization. Default is `en`
+- **ResultSortBy**
+  Sort results by title (`ResultSortBy:"title"`) or publish date (`ResultSortBy:"pubdate"`). Defaults to `""` (no sort).
+- **ResultDescend**
+  Sort results with descending order (`ResultDescend:true`) or ascending order (`ResultDescend:false`). Defaults to `false`. This option has effect only if `ResultSortBy` is set.
 
 ## Demo
 

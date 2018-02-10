@@ -13,7 +13,9 @@
             DescCharacterLimit: 0,
             TitleLinkTarget: "_blank",
             DateFormat: "",
-            DateFormatLang:"en"
+            DateFormatLang:"en",
+            ResultSortBy: "",
+            ResultDescend: false
         }, opt);
         
         var id = $(this).attr("id"), i, s = "", dt;
@@ -21,25 +23,36 @@
         if (def.FeedUrl == undefined) return;       
         $("#" + id).append('<img src="loader.gif" />');
 
-        var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + def.FeedUrl + '" LIMIT ' + def.MaxCount;
+        var YQLstr = 'SELECT * FROM rss WHERE url ="' + def.FeedUrl + '"';
+        
+        if (def.ResultSortBy == "title") {
+			YQLstr = YQLstr + ' | sort(field="title", descending="'+def.ResultDescend.toString()+'")';
+		}
+		else if (def.ResultSortBy == "pubdate") {
+			YQLstr = YQLstr + ' | sort(field="pubDate", descending="'+def.ResultDescend.toString()+'")';
+		}
+		
+		YQLstr = YQLstr + ' | truncate(count=' + def.MaxCount + ')';
+		
+		console.log(YQLstr);
 
         $.ajax({
             url: "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(YQLstr) + "&format=json&diagnostics=false&callback=?",
             dataType: "json",
             success: function (data) {
                 $("#" + id).empty();
-                if (!(data.query.results.rss instanceof Array)) {
-                    data.query.results.rss = [data.query.results.rss];
+                if (!(data.query.results.item instanceof Array)) {
+                    data.query.results.item = [data.query.results.rss];
                 }
-                $.each(data.query.results.rss, function (e, itm) {
-                    s += '<li><div class="itemTitle"><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
+                $.each(data.query.results.item, function (e, itm) {
+                    s += '<li><div class="itemTitle"><a href="' + itm.link + '" target="' + def.TitleLinkTarget + '" >' + itm.title + '</a></div>';
                     
                     if (def.ShowPubDate){
-                        dt = new Date(itm.channel.item.pubDate);
+                        dt = new Date(itm.pubDate);
                         s += '<div class="itemDate">';
                         if ($.trim(def.DateFormat).length > 0) {
                             try {
-                                moment.lang(def.DateFormatLang);
+                                moment.locale(def.DateFormatLang);
                                 s += moment(dt).format(def.DateFormat);
                             }
                             catch (e){s += dt.toLocaleDateString();}                            
@@ -51,11 +64,11 @@
                     }
                     if (def.ShowDesc) {
                         s += '<div class="itemContent">';
-                         if (def.DescCharacterLimit > 0 && itm.channel.item.description.length > def.DescCharacterLimit) {
-                            s += itm.channel.item.description.substring(0, def.DescCharacterLimit) + '...';
+                         if (def.DescCharacterLimit > 0 && itm.description.length > def.DescCharacterLimit) {
+                            s += itm.description.substring(0, def.DescCharacterLimit) + '...';
                         }
                         else {
-                            s += itm.channel.item.description;
+                            s += itm.description;
                          }
                          s += '</div>';
                     }
