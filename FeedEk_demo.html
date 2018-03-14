@@ -15,6 +15,12 @@
                 MaxCount: 3
             });
 
+            $('#divRss1').FeedEk({
+              FeedUrl: 'https://habrahabr.ru/rss/feed/posts/6266e7ec4301addaf92d10eb212b4546/',
+              MaxCount: 2, 
+              ShowAuthor: true // Show author name: true or false (default: true)
+            });
+
             $('#divRss2').FeedEk({
                 FeedUrl: 'http://jquery-plugins.net/rss',
                 MaxCount: 4,
@@ -129,6 +135,21 @@
 $('#divRss').FeedEk({
   FeedUrl: 'http://jquery-plugins.net/rss',
   MaxCount: 2
+});
+</pre>
+        </div>
+
+        <div class="rssDiv">
+            <p>
+                <strong>Get AuthorName Example</strong>
+            <p />
+            <div id="divRss1"></div>
+            <strong>Code</strong>
+            <pre class="prettyprint">
+$('#divRss').FeedEk({
+  FeedUrl: 'http://jquery-plugins.net/rss',
+  MaxCount: 2, 
+  ShowAuthor: true
 });
 </pre>
         </div>
