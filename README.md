@@ -83,4 +83,3 @@ Check out [FeedEk examples](https://jquery-plugins.net/FeedEk/FeedEk-examples.ht
 [Plugin Homepage](https://jquery-plugins.net/FeedEk/FeedEk.html)
 
 [Demo](https://jquery-plugins.net/FeedEk/FeedEk_demo.html)
-
