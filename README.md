@@ -52,7 +52,7 @@ FeedEk jQuery RSS/ATOM Feed Plugin
       });
 
 **IMPORTANT :** [Moment.js](http://momentjs.com) is used for DateFormat options. You must include [Moment.js](http://momentjs.com/downloads/moment.min.js) for date format.
-If you want to localize date format (day name, month name) you must include [Moment.js with langs](http://momentjs.com/downloads/moment-with-langs.min.js) instead.
+If you want to localize date format (day name, month name) you must include [Moment.js with langs](http://momentjs.com/downloads/moment-with-locales.js) instead.
 
 Please visit [format examples](http://momentjs.com/docs/#/displaying/format/) and [languages](http://momentjs.com). for more information.
 
