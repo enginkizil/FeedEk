@@ -47,8 +47,8 @@ FeedEk jQuery RSS/ATOM Feed Plugin
         ShowPubDate:true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank',
-		DateFormat:'MM/dd/yyyy',
-		DateFormatLang:'en'
+	DateFormat:'MM/dd/yyyy',
+	DateFormatLang:'en'
       });
 
 ## Options
