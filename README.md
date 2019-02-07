@@ -13,7 +13,7 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 1- Include jQuery and FeedEk plugin scripts into your page.
 
      <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-     <script type="text/javascript" src="FeedEk.js"></script>
+     <script type="text/javascript" src="FeedEk.min.js"></script>
 
 2- Add a placeholder for the plugin to your page.
 
@@ -24,13 +24,13 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 **- Basic**
 
     $('#divRss').FeedEk({
-        FeedUrl : 'http://jquery-plugins.net/rss',
+        FeedUrl : 'https://jquery-plugins.net/rss',
       });
 
 **- With Options**
 
     $('#divRss').FeedEk({
-        FeedUrl : 'http://jquery-plugins.net/rss',
+        FeedUrl : 'https://jquery-plugins.net/rss',
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
@@ -41,23 +41,15 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 **- With Date Format Options**
 
     ('#divRss').FeedEk({
-        FeedUrl : 'http://jquery-plugins.net/rss',
+        FeedUrl : 'https://jquery-plugins.net/rss',
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank',
-		DateFormat:'MM/DD/YYYY',
+		DateFormat:'MM/dd/yyyy',
 		DateFormatLang:'en'
       });
-
-**IMPORTANT :** [Moment.js](http://momentjs.com) is used for DateFormat options. You must include [Moment.js](http://momentjs.com/downloads/moment.min.js) for date format.
-If you want to localize date format (day name, month name) you must include [Moment.js with locales](http://momentjs.com/downloads/moment-with-locales.js) instead.
-
-Please visit [format examples](http://momentjs.com/docs/#/displaying/format/) and [languages](http://momentjs.com). for more information.
-
-Check out [FeedEk examples](https://jquery-plugins.net/FeedEk/FeedEk-examples.html) page for date format usage.
-
 
 ## Options
 
