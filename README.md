@@ -40,15 +40,15 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 
 **- With Date Format Options**
 
-    ('#divRss').FeedEk({
+    $('#divRss').FeedEk({
         FeedUrl : 'https://jquery-plugins.net/rss',
         MaxCount : 5,
         ShowDesc : true,
         ShowPubDate:true,
         DescCharacterLimit:100,
         TitleLinkTarget:'_blank',
-	DateFormat:'MM/dd/yyyy',
-	DateFormatLang:'en'
+        DateFormat : 'MM/dd/yyyy',
+        DateFormatLang : 'en'
       });
 
 ## Options
