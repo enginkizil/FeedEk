@@ -74,4 +74,4 @@ FeedEk jQuery RSS/ATOM Feed Plugin
 
 [Plugin Homepage](https://jquery-plugins.net/FeedEk/FeedEk.html)
 
-[Demo](https://jquery-plugins.net/FeedEk/FeedEk_demo.html)
+[Demo](https://jquery-plugins.net/FeedEk/FeedEk_demo.html) 
