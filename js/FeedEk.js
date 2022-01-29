@@ -11,7 +11,10 @@
 			DescCharacterLimit: 0,
 			TitleLinkTarget: "_blank",
 			DateFormat: "",
-			DateFormatLang: "en"
+			DateFormatLang: "en",
+			Offset: 0,
+			ShowAuthor: false,
+			AuthorLabel:"Author:"
 		}, opt);
 
 		var id = $(this).attr("id"), s = "", dt;
@@ -19,13 +22,13 @@
 		if (def.FeedUrl == undefined) return;
 		$("#" + id).append('<img src="loader.gif" />');
 		$.ajax({
-			url: "https://feed.jquery-plugins.net/load?url=" + encodeURIComponent(def.FeedUrl) + "&maxCount=" + def.MaxCount + "&dateCulture=" + def.DateFormatLang + "&dateFormat=" + def.DateFormat,
+			url: "https://feed.jquery-plugins.net/load?url=" + encodeURIComponent(def.FeedUrl) + "&maxCount=" + def.MaxCount + "&dateCulture=" + def.DateFormatLang + "&dateFormat=" + def.DateFormat + "&offset=" + def.Offset,
 			dataType: "json",
 			success: function (result) {
 				$("#" + id).empty();
 				if (result.data == null)
 					return;
-
+				console.log(result.data);
 				$.each(result.data, function (e, itm) {
 					s += '<li><div class="itemTitle"><a href="' + itm.link + '" target="' + def.TitleLinkTarget + '" >' + itm.title + '</a></div>';
 
@@ -50,6 +53,9 @@
 						}
 						s += '</div>';
 					}
+                    if (def.ShowAuthor) {
+						s += '<div class="itemAuthor">'+def.AuthorLabel+' '+itm.author+'</div>';
+                    }
 					s += '</li>';
                 });
 

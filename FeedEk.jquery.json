@@ -11,7 +11,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://opensource.org/licenses/mit-license.php"
+      "url": "https://opensource.org/licenses/mit-license.php"
     }
   ],
   "dependencies": {
@@ -21,5 +21,5 @@
   "demo": "https://jquery-plugins.net/FeedEk/FeedEk_demo.html",
   "docs": "https://jquery-plugins.net/FeedEk/FeedEk.html",  
   "download": "https://jquery-plugins.net/FeedEk/FeedEk.html",
-  "keywords": ["feed", "rss", "atom", "reader", "parser", "jQuery", "plugin"]
+  "keywords": ["feed", "rss", "atom", "feed-reader", "feed-parser", "jQuery", "javascript","plugin"]
 }

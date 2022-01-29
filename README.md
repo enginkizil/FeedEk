@@ -36,7 +36,10 @@ FeedEk jQuery RSS/ATOM Feed Plugin
         ShowDesc : true,
         ShowPubDate:true,
         DescCharacterLimit:100,
-        TitleLinkTarget:'_blank'
+        TitleLinkTarget:'_blank',
+        Offset: 5,
+        ShowAuthor: true,
+        AuthorLabel:"Author:"
       });
 
 **- With Date Format Options**
@@ -70,6 +73,12 @@ FeedEk jQuery RSS/ATOM Feed Plugin
   Option for Feed Publish Date Format. Default is none
 - **DateFormatLang**
   Option for Feed Publish Date Format Language for localization. Default is `en`
+- **Offset**
+  Offset option for pagination. Default is `0`
+- **ShowAuthor**
+  Option to show Author of Feed Item. Default is `false`
+- **AuthorLabel**
+  Option to set title of author label. Default is `Author:`. ShowAuthor option must be true to set AuthorLabel.
 
 ## Demo
 
