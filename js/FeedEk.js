@@ -50,7 +50,8 @@
 						}
 						s += '</div>';
 					}
-				});
+					s += '</li>';
+                });
 
 				$("#" + id).append('<ul class="feedEkList">' + s + '</ul>');
 			}
