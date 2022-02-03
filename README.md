@@ -12,30 +12,30 @@ FeedEk jQuery RSS/ATOM Feed Plugin
  
 ## Usage
 1- Include jQuery and FeedEk plugin scripts into your page.
-
+    ```javascript
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
      <script type="text/javascript" src="FeedEk.min.js"></script>
-
+    ```
 2- Add a placeholder for the plugin to your page.
-
+    ```html
     <div id="divFeed"></div>
-
+    ```
 3- Call the plugin.
 
 **- Basic**
-
+    ```javascript
     $('#divFeed').FeedEk({
         FeedUrl : 'https://jquery-plugins.net/rss',
-      });
-
+    });
+    ```
 **- Multiple Feed Url**
-
+    ```javascript
     $('#divFeed').FeedEk({
         FeedUrl : ['https://jquery-plugins.net/rss','http://rss.cnn.com/rss/cnn_topstories.rss']
-      });
-
+    });
+    ```
 **- With Options**
-
+    ```javascript
     $('#divFeed').FeedEk({
         FeedUrl : 'https://jquery-plugins.net/rss',
         MaxCount : 5,
@@ -47,9 +47,11 @@ FeedEk jQuery RSS/ATOM Feed Plugin
         DateFormatLang : 'en'
         Offset: 5,
         ShowAuthor: true,
-        AuthorLabel:"Author:"
-      });
-
+        AuthorLabel:"Author:",
+        Success: function (feedItems) { },
+		Error: function (error) { }
+    });
+    ```
 
 ## Options
 
@@ -75,6 +77,10 @@ FeedEk jQuery RSS/ATOM Feed Plugin
   Option to show Author of Feed Item. Default is `false`
 - **AuthorLabel**
   Option to set title of author label. Default is `Author:`. ShowAuthor option must be true to set AuthorLabel.
+- **Success**
+  Callback to manipulate the DOM element wich contains the Feed Items after the load.
+- **Error**
+  Callback when error occurs during fetching feeds.
 
 ## Demo
 
