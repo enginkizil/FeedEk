@@ -1,5 +1,5 @@
-/*! FeedEk jQuery RSS/ATOM Feed Plugin v3.2.0
-* https://jquery-plugins.net/FeedEk/FeedEk.html  https://github.com/enginkizil/FeedEk
+/* FeedEk jQuery RSS/ATOM Feed Plugin v3.2.0
+* https://jquery-plugins.net/FeedEk/FeedEk.html  https://github.com/enginkizil/FeedEk 
 * Author : Engin KIZIL */
 (function ($) {
 	$.fn.FeedEk = function (options) {
@@ -71,7 +71,7 @@
 			return '<ul class="feedEkList">' + s + '</ul>';
 		}
 		var getDescription = function (desc) {
-			if (def.DescCharacterLimit > 0 && description.length > def.DescCharacterLimit) {
+			if (def.DescCharacterLimit > 0 && desc.length > def.DescCharacterLimit) {
 				desc = desc.substring(0, def.DescCharacterLimit) + '...';
 			}
 			return desc;

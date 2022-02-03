@@ -2,13 +2,13 @@
   "name": "feedek",
   "title": "FeedEk jQuery RSS/ATOM Feed Plugin",
   "homepage": "https://jquery-plugins.net/FeedEk/FeedEk.html",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "FeedEk is a jQuery plugin for parsing and displaying RSS and Atom feeds. You can obtain feeds easily from any domain. No need for server-side scripts. Feed API is used for fetching RSS/Atom feed data.",
   "repository": {
     "type": "git",
     "url": "https://github.com/enginkizil/FeedEk.git"
   },
-  "keywords": ["feed", "rss", "atom", "reader", "parser", "jQuery"],
+  "keywords": ["feed", "rss", "atom", "feed-reader", "feed-parser", "jQuery"],
   "author": {
     "name": "Engin KIZIL",
     "url": "http://enginkizil.com"
@@ -16,6 +16,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/enginkizil/FeedEk/issues"
-  },
-  "homepage": "https://jquery-plugins.net/FeedEk/FeedEk.html"
+  }
 }

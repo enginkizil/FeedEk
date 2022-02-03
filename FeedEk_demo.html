@@ -7,175 +7,148 @@
 <link href="css/FeedEk.css" rel="stylesheet" type="text/css" />
 <style>
     body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;background-color: #efefef;font-size: 13px;line-height: 17px !important;}
-    .rssDiv{float: left;padding-right: 35px;}
+    .feedDiv{float: left;padding-right: 35px;}
     ul{width: 300px !important;}
+    pre{border:1px dashed #BBB; background-color:#fffcfc}
 </style>
 </head>
 <body>
 <div style="padding: 10px;">
 <h1>FeedEk Examples</h1>
 <div>
-    <div class="rssDiv">
+    <div class="feedDiv">
         <p><strong>Basic Example</strong></p>
-        <div id="divRss"></div>
+        <div id="divFeed"></div>
         <strong>Code</strong>
-        <pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2
+        <pre>
+$('#divFeed').FeedEk({
+    FeedUrl: 'https://jquery-plugins.net/rss',
+    MaxCount: 2
 });
 </pre>
     </div>
-    <div class="rssDiv">
+    <div class="feedDiv">
         <p><strong>Description Character Limit Example</strong></p>
-        <div id="divRss2"></div>
+        <div id="divFeed2"></div>
         <strong>Code</strong>
-        <pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 3,
-ShowDesc: true,
-ShowPubDate: false,
-DescCharacterLimit: 100
+        <pre>
+$('#divFeed').FeedEk({
+    FeedUrl: 'https://jquery-plugins.net/rss',
+    MaxCount: 3,
+    ShowDesc: true,
+    ShowPubDate: false,
+    DescCharacterLimit: 100
 });
-</pre>
+        </pre>
     </div>
-    <div class="rssDiv">
-        <p><strong>No Description Example</strong></p>
-        <div id="divRss3"></div>
+    <div class="feedDiv">
+        <p><strong>Multiple Feed Url Example</strong></p>
+        <div id="divFeed3"></div>
         <strong>Code</strong>
-        <pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 4,
-ShowDesc: false
+        <pre>
+$('#divFeed').FeedEk({
+    FeedUrl: ['http://feeds.bbci.co.uk/news/rss.xml', 
+              'https://www.espn.com/espn/rss/news'],
+    MaxCount: 4
 });
-</pre>
+        </pre>
     </div>
     <div style="clear: both"></div>
 </div>
 <h2>Examples with date format</h2>
 <div>
-    <div class="rssDiv">
-        <div id="divRss4"></div>
+    <div class="feedDiv">
+        <div id="divFeed4"></div>
         <strong>Code</strong>
-        <pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2,
-DateFormat: 'd',
-DateFormatLang:'en'
+        <pre>
+$('#divFeed').FeedEk({
+    FeedUrl: 'https://jquery-plugins.net/rss',
+    MaxCount: 2,
+    DateFormat: 'd',
+    DateFormatLang:'en'
 });
 </pre>
     </div>
-    <div class="rssDiv">
+    <div class="feedDiv">
 
-        <div id="divRss5"></div>
+        <div id="divFeed5"></div>
         <strong>Code</strong>
-		<pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2,
-DateFormat: 'D',
-DateFormatLang:'fr-FR'
+        <pre>
+$('#divFeed').FeedEk({
+    FeedUrl: 'https://jquery-plugins.net/rss',
+    MaxCount: 2,
+    DateFormat: 'D',
+    DateFormatLang:'fr-FR'
 });
 </pre>
     </div>
-    <div class="rssDiv">
+    <div class="feedDiv">
 
-        <div id="divRss6"></div>
+        <div id="divFeed10"></div>
         <strong>Code</strong>
-        <pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2,
-DateFormat: 'f',
-DateFormatLang:'en'
+        <pre>
+$('#divFeed').FeedEk({
+    FeedUrl: 'https://jquery-plugins.net/rss',
+    MaxCount: 2,
+    DateFormat: 'MM-dd-yyyy HH:mm',
+    DateFormatLang:'en'
 });
 </pre>
     </div>
     <div style="clear: both"></div>
 </div>
 <hr />
-
 <div>
-    <div class="rssDiv">
+    
+    <div class="feedDiv">
 
-        <div id="divRss10"></div>
+        <div id="divFeed11"></div>
         <strong>Code</strong>
-		<pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2,
-DateFormat: 'MM-dd-yyyy HH:mm',
-DateFormatLang:'en'
+		<pre>
+$('#divFeed').FeedEk({
+    FeedUrl: 'https://jquery-plugins.net/rss',
+    MaxCount: 2,
+    DateFormat: 'dd MMMM yyyy',
+    DateFormatLang: 'en'
 });
 </pre>
     </div>
-    <div class="rssDiv">
 
-        <div id="divRss11"></div>
-        <strong>Code</strong>
-		<pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2,
-DateFormat: 'dd MMMM yyyy',
-DateFormatLang: 'en'
-});
-</pre>
-    </div>
-    <div class="rssDiv">
-
-        <div id="divRss12"></div>
-        <strong>Code</strong>
-		<pre class="prettyprint">
-$('#divRss').FeedEk({
-FeedUrl: 'https://jquery-plugins.net/rss',
-MaxCount: 2,
-DateFormat: 'MM/dd/yyyy'
-});
-</pre>
-    </div>
     <div style="clear: both"></div>
 </div>
 
 </div>
-<p><a href="https://jquery-plugins.net/FeedEk/FeedEk.html">FeedEk Plugin Page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://jquery-plugins.net/FeedEk/FeedEk_demo.html" >Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/enginkizil/FeedEk" >Github</a></p><br/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<p><a href="https://jquery-plugins.net/FeedEk/FeedEk.html">FeedEk Plugin Page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://jquery-plugins.net/FeedEk/FeedEk_demo.html" >Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/enginkizil/FeedEk" >Github</a></p><br/><br />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/FeedEk.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-       		$('#divRss').FeedEk({
+       		$('#divFeed').FeedEk({
 				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2
 			});
 
-			$('#divRss2').FeedEk({
+			$('#divFeed2').FeedEk({
 				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 3, ShowDesc: true, ShowPubDate: false, DescCharacterLimit: 100
-			});
-			$('#divRss3').FeedEk({
-				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 4, ShowDesc: false
-			});
+            });
 
-			$('#divRss4').FeedEk({
+            $('#divFeed3').FeedEk({
+                FeedUrl: ['http://feeds.bbci.co.uk/news/rss.xml','https://www.espn.com/espn/rss/news'],
+                MaxCount: 4
+            });
+
+			$('#divFeed4').FeedEk({
 				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2, DateFormat: 'd', DateFormatLang: 'en'
-			});
+            });
 
-			$('#divRss5').FeedEk({
+			$('#divFeed5').FeedEk({
 				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2, DateFormat: 'D', DateFormatLang: 'fr-FR'
-			});
-			$('#divRss6').FeedEk({
-				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2, DateFormat: 'f', DateFormatLang: 'en'
-			});
+			});			
 
-			$('#divRss10').FeedEk({
+			$('#divFeed10').FeedEk({
 				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2, DateFormat: 'MM-dd-yyyy HH:mm', DateFormatLang: 'en'
 			});
-			$('#divRss11').FeedEk({
+			$('#divFeed11').FeedEk({
 				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2, DateFormat: 'dd MMMM yyyy', DateFormatLang: 'en'
-			});
-			$('#divRss12').FeedEk({
-				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 2, DateFormat: 'MM/dd/yyyy'
 			});
     });
 
