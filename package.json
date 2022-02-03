@@ -16,5 +16,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/enginkizil/FeedEk/issues"
-  }
+  },
+  "dependencies": {
+        "custom": "git+ssh://git@github.com:enginkizil/FeedEk.git"
+    },
+    "scripts": {
+        "postinstall": "npm update && npm i custom"
+    }
 }
