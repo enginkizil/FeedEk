@@ -44,7 +44,7 @@ $('#divFeed').FeedEk({
     DescCharacterLimit:100,
     TitleLinkTarget:'_blank',
     DateFormat : 'MM/dd/yyyy',
-    DateFormatLang : 'en'
+    DateFormatLang : 'en',
     Offset: 5,
     ShowAuthor: true,
     AuthorLabel:"Author:",
