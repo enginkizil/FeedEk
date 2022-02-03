@@ -12,46 +12,46 @@ FeedEk jQuery RSS/ATOM Feed Plugin
  
 ## Usage
 1- Include jQuery and FeedEk plugin scripts into your page.
-    ```javascript
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script type="text/javascript" src="FeedEk.min.js"></script>
-    ```
+```javascript
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="FeedEk.min.js"></script>
+```
 2- Add a placeholder for the plugin to your page.
-    ```html
-    <div id="divFeed"></div>
-    ```
+```html
+<div id="divFeed"></div>
+```
 3- Call the plugin.
 
 **- Basic**
-    ```javascript
-    $('#divFeed').FeedEk({
-        FeedUrl : 'https://jquery-plugins.net/rss',
-    });
-    ```
+```javascript
+$('#divFeed').FeedEk({
+    FeedUrl : 'https://jquery-plugins.net/rss',
+});
+```
 **- Multiple Feed Url**
-    ```javascript
-    $('#divFeed').FeedEk({
-        FeedUrl : ['https://jquery-plugins.net/rss','http://rss.cnn.com/rss/cnn_topstories.rss']
-    });
-    ```
+```javascript
+$('#divFeed').FeedEk({
+    FeedUrl : ['https://jquery-plugins.net/rss','http://rss.cnn.com/rss/cnn_topstories.rss']
+});
+```
 **- With Options**
-    ```javascript
-    $('#divFeed').FeedEk({
-        FeedUrl : 'https://jquery-plugins.net/rss',
-        MaxCount : 5,
-        ShowDesc : true,
-        ShowPubDate:true,
-        DescCharacterLimit:100,
-        TitleLinkTarget:'_blank',
-        DateFormat : 'MM/dd/yyyy',
-        DateFormatLang : 'en'
-        Offset: 5,
-        ShowAuthor: true,
-        AuthorLabel:"Author:",
-        Success: function (feedItems) { },
-		Error: function (error) { }
-    });
-    ```
+```javascript
+$('#divFeed').FeedEk({
+    FeedUrl : 'https://jquery-plugins.net/rss',
+    MaxCount : 5,
+    ShowDesc : true,
+    ShowPubDate:true,
+    DescCharacterLimit:100,
+    TitleLinkTarget:'_blank',
+    DateFormat : 'MM/dd/yyyy',
+    DateFormatLang : 'en'
+    Offset: 5,
+    ShowAuthor: true,
+    AuthorLabel:"Author:",
+    Success: function (feedItems) { },
+    Error: function (error) { }
+});
+```
 
 ## Options
 
