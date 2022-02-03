@@ -18,7 +18,7 @@
     "url": "https://github.com/enginkizil/FeedEk/issues"
   },
   "dependencies": {
-        "custom": "git+ssh://git@github.com:enginkizil/FeedEk.git"
+        "custom": "git+ssh://git@github.com:enginkizil/FeedEk.git#3.2.0"
     },
     "scripts": {
         "postinstall": "npm update && npm i custom"
